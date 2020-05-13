@@ -1,4 +1,4 @@
-module sd_piece #(parameter POSTGAIN, parameter BITWIDTH = 32) (clk, kin1, kin2, muxin1, muxin2, sd_out);
+module sd_piece #(parameter POSTGAIN=2, parameter BITWIDTH = 32) (clk, kin1, kin2, muxin1, muxin2, sd_out);
 input clk;
 input [BITWIDTH-1:0] kin1, kin2;
 input muxin1, muxin2;

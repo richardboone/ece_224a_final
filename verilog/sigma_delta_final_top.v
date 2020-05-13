@@ -1,5 +1,5 @@
-module sd_piece #(parameter POSTGAIN=2, parameter BITWIDTH = 32) (clk, kin1, kin2, muxin1, muxin2, sd_out);
-input clk;
+module sd_piece #(parameter POSTGAIN=2, parameter BITWIDTH = 32) (clk, reset, kin1, kin2, muxin1, muxin2, sd_out);
+input clk, reset;
 input [BITWIDTH-1:0] kin1, kin2;
 input muxin1, muxin2;
 output sd_out;
@@ -7,7 +7,7 @@ output sd_out;
 	wire [BITWIDTH-1:0] intermediate_builder;
 	
 	wire [BITWIDTH-1:0] small_feedback_sum;
-	wire [BITWIDTH-1:0] capped;
+	wire [BITWIDTH-1:0] capped, gained;
 	reg [BITWIDTH-1:0] feedback;
 	//muxes
 	assign muxout1 = muxin1 ? kin1 : kin2;
@@ -23,7 +23,7 @@ output sd_out;
 	
 	always@(posedge clk)
 	begin
-		feedback <= mid_feedback_sum;
+		feedback <= (reset) ? 0 : mid_feedback_sum;
 	end
 	
 	assign gained = feedback << POSTGAIN;
@@ -31,22 +31,23 @@ output sd_out;
 	
 	sd2 sd_one(
 	.clk(clk),
+	.reset(reset),
 	.sd_in(gained),
 	.bs_out(sd_out));
 
 
 endmodule
 
-module sigma_delta_final_top #(parameter FSIG = 1000, BITWIDTH = 32)(clk, kin, sd_out);
+module sigma_delta_final_top #(parameter FSIG = 1000, BITWIDTH = 32)(clk, reset, kin, sd_out);
 
-input clk;
+input clk, reset;
 input [BITWIDTH-1:0] kin;
 output [2:0] sd_out;
 
 wire [BITWIDTH-1:0] kpos, kneg;
 
-assign kpos = kin;
-assign kneg = -kin;
+assign kpos = (reset) ? 0 : kin;
+assign kneg = (reset) ? 0 : -kin;
 
 //sigmadelta1
 
@@ -54,6 +55,7 @@ assign kneg = -kin;
 		.BITWIDTH(BITWIDTH))
 	piece_0 (
 		.clk(clk),
+		.reset(reset),
 		.kin1(kpos),
 		.kin2(kneg),
 		.muxin1(sd_out[1]),
@@ -64,6 +66,7 @@ assign kneg = -kin;
 		.BITWIDTH(BITWIDTH))
 	piece_1 (
 		.clk(clk),
+		.reset(reset),
 		.kin1(kpos),
 		.kin2(kneg),
 		.muxin1(sd_out[0]),
@@ -74,19 +77,12 @@ assign kneg = -kin;
 		.BITWIDTH(BITWIDTH))
 	piece_2 (
 		.clk(clk),
+		.reset(reset),
 		.kin1(kpos),
 		.kin2(kneg),
 		.muxin1(sd_out[1]),
 		.muxin2(sd_out[0]),
 		.sd_out(sd_out[2]));
-
-
-
-
-
-
-
-
 
 
 endmodule

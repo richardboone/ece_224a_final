@@ -5,6 +5,7 @@ module test_sdgen;
 	parameter BITWIDTH = 32;
 	
 	reg clk = 0;
+	reg reset;
 	wire [2:0] sd_out;
 	
 	initial begin
@@ -14,8 +15,11 @@ module test_sdgen;
 	end
 	
 	initial begin
-		kval = {16'b0000100000101110, 16'h6666};
-	
+		kval <= {16'b0000100000101110, 16'h6666};
+		reset <= 1;
+		
+		#1000;
+		reset <= 0;
 	
 	
 	end
@@ -25,6 +29,7 @@ module test_sdgen;
 		.BITWIDTH(BITWIDTH))
 		top_sd (
 		.clk(clk),
+		.reset(reset),
 		.kin(kval),
 		.sd_out(sd_out));
 		

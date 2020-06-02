@@ -1,4 +1,4 @@
-module sd2 #(parameter BW = 32) (clk, reset, sd_in, bs_out);
+module sd2 #(parameter BW = 32, parameter RESETVAL = 0) (clk, reset, sd_in, bs_out);
 
 // input bitwidth
 // parameter BW = 32;
@@ -23,8 +23,8 @@ assign feedback = sd_reg1[BW+1] ? -(2**(BW-1)) : (2**(BW-1) - 1);
 
 // register update logic
 always@(posedge clk) begin
-	sd_reg1 <= (reset) ? 0 : sd_reg1 + sd_reg2 + sd_in - (feedback <<< 1);
-	sd_reg2 <= (reset) ? 0 : sd_reg2 + sd_in - feedback;
+	sd_reg1 <= (reset) ? RESETVAL : sd_reg1 + sd_reg2 + sd_in - (feedback <<< 1);
+	sd_reg2 <= (reset) ? RESETVAL : sd_reg2 + sd_in - feedback;
 end
 
 endmodule

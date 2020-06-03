@@ -1,7 +1,7 @@
-module sd_two_piece #(parameter POSTGAIN=2, parameter BITWIDTH = 32, parameter RESETVAL = 0) (clk, reset, kin1, kin2, muxin1, muxin2, sd_out);
+module sd_two_piece #(parameter POSTGAIN=2, parameter BITWIDTH = 32, parameter RESETVAL = 0) (clk, reset, kin1, kin2, muxin1, sd_out);
 input clk, reset;
 input [BITWIDTH-1:0] kin1, kin2;
-input muxin1, muxin2;
+input muxin1;
 output sd_out;
 	wire [BITWIDTH-1:0] muxout1, muxout2;
 	wire [BITWIDTH-1:0] intermediate_builder;
@@ -11,10 +11,9 @@ output sd_out;
 	reg [BITWIDTH-1:0] feedback;
 	//muxes
 	assign muxout1 = muxin1 ? kin1 : kin2;
-	assign muxout2 = muxin2 ? kin2 : kin1;
 	assign muxout3 = sd_out ? -16'd1 : 16'd1;
 
-	assign intermediate_builder = muxout1 + muxout2;//addsub2
+	assign intermediate_builder = muxout1;//addsub2
 	
 	assign small_feedback_sum = intermediate_builder + muxout3;
 	assign mid_feedback_sum = small_feedback_sum + feedback;
@@ -23,7 +22,7 @@ output sd_out;
 	
 	always@(posedge clk)
 	begin
-		feedback <= (reset) ? 0 : mid_feedback_sum;
+		feedback <= (reset) ? RESETVAL : mid_feedback_sum;
 	end
 	
 	assign gained = feedback << POSTGAIN;
@@ -44,7 +43,7 @@ module sigma_delta_twopiece_top #(parameter FSIG = 1000, BITWIDTH = 32)(clk, res
 
 input clk, reset;
 input [BITWIDTH-1:0] kin;
-output [2:0] sd_out;
+output [1:0] sd_out;
 
 wire [BITWIDTH-1:0] kpos, kneg;
 
@@ -53,41 +52,29 @@ assign kneg = (reset) ? 0 : -kin;
 
 //sigmadelta1
 
-	sd_piece #(.POSTGAIN(2),
+	sd_two_piece #(.POSTGAIN(2),
 		.BITWIDTH(BITWIDTH),
 		.RESETVAL(0))
 	piece_0 (
 		.clk(clk),
 		.reset(reset),
-		.kin1(kpos),
-		.kin2(kneg),
+		.kin1(kneg),
+		.kin2(kpos),
 		.muxin1(sd_out[1]),
-		.muxin2(sd_out[2]),
 		.sd_out(sd_out[0]));
 		
-	sd_piece #(.POSTGAIN(2),
+	sd_two_piece #(.POSTGAIN(2),
 		.BITWIDTH(BITWIDTH),
-		.RESETVAL(32'h00ffffff))
+		.RESETVAL(32'hffffffff))
 	piece_1 (
 		.clk(clk),
 		.reset(reset),
 		.kin1(kpos),
 		.kin2(kneg),
 		.muxin1(sd_out[0]),
-		.muxin2(sd_out[2]),
 		.sd_out(sd_out[1]));
 
-	sd_piece #(.POSTGAIN(2),
-		.BITWIDTH(BITWIDTH),
-		.RESETVAL(32'h000fffff))
-	piece_2 (
-		.clk(clk),
-		.reset(reset),
-		.kin1(kpos),
-		.kin2(kneg),
-		.muxin1(sd_out[1]),
-		.muxin2(sd_out[0]),
-		.sd_out(sd_out[2]));
+
 
 
 endmodule

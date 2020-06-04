@@ -6,7 +6,7 @@ output sd_out;
 	wire [BITWIDTH-1:0] muxout1, muxout2;
 	wire [BITWIDTH-1:0] intermediate_builder;
 	
-	wire [BITWIDTH-1:0] small_feedback_sum;
+	wire [BITWIDTH-1:0] small_feedback_sum, mid_feedback_sum;
 	wire [BITWIDTH-1:0] capped, gained;
 	reg [BITWIDTH-1:0] feedback;
 	//muxes
@@ -25,14 +25,15 @@ output sd_out;
 		feedback <= (reset) ? RESETVAL : mid_feedback_sum;
 	end
 	
-	assign gained = feedback << POSTGAIN;
+	assign gained = feedback;
 	
 	
-	sd2 # (.RESETVAL(RESETVAL))
+	sd2 # (.RESETVAL(0),
+	.BW(12))
 	sd_one(
 	.clk(clk),
 	.reset(reset),
-	.sd_in(gained),
+	.sd_in(gained[31:20]),
 	.bs_out(sd_out));
 
 
@@ -54,7 +55,7 @@ assign kneg = (reset) ? 0 : -kin;
 
 	sd_two_piece #(.POSTGAIN(2),
 		.BITWIDTH(BITWIDTH),
-		.RESETVAL(0))
+		.RESETVAL(32'h80000000))
 	piece_0 (
 		.clk(clk),
 		.reset(reset),
@@ -65,7 +66,7 @@ assign kneg = (reset) ? 0 : -kin;
 		
 	sd_two_piece #(.POSTGAIN(2),
 		.BITWIDTH(BITWIDTH),
-		.RESETVAL(32'hffffffff))
+		.RESETVAL(32'h00000000))
 	piece_1 (
 		.clk(clk),
 		.reset(reset),

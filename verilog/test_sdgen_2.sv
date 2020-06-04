@@ -10,12 +10,14 @@ module test_sdgen_2;
 	
 	initial begin
 		forever begin
-			#5; clk <= ~clk;
+			#500; clk <= ~clk;
 		end
 	end
 	
 	initial begin
-		kval <= {16'b0000100000101110, 16'hffff};
+		// kval <= {16'b0000100000101110, 16'hffff};
+		kval <= {16'h0e2c, 16'ha000};//3627 in lowest bits
+		// kval <= {16'h0000, 16'b0000111000101011‬};
 		reset <= 1;
 		
 		#1000;

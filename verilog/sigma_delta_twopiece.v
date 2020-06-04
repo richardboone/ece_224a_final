@@ -3,7 +3,7 @@ input clk, reset;
 input [BITWIDTH-1:0] kin1, kin2;
 input muxin1;
 output sd_out;
-	wire [BITWIDTH-1:0] muxout1, muxout2;
+	wire [BITWIDTH-1:0] muxout1, muxout2, muxout3;
 	wire [BITWIDTH-1:0] intermediate_builder;
 	
 	wire [BITWIDTH-1:0] small_feedback_sum, mid_feedback_sum;
@@ -11,7 +11,7 @@ output sd_out;
 	reg [BITWIDTH-1:0] feedback;
 	//muxes
 	assign muxout1 = muxin1 ? kin1 : kin2;
-	assign muxout3 = sd_out ? -16'd1 : 16'd1;
+	assign muxout3 = sd_out ? 32'hffff0000 : 32'h00010000;
 
 	assign intermediate_builder = muxout1;//addsub2
 	

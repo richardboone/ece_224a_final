@@ -1,4 +1,4 @@
-module sd_two_piece #(parameter POSTGAIN=2, parameter BITWIDTH = 32, parameter RESETVAL = 0) (clk, reset, kin1, kin2, muxin1, sd_out);
+module sd_two_piece #(parameter POSTGAIN=2, parameter BITWIDTH = 40, parameter RESETVAL = 0) (clk, reset, kin1, kin2, muxin1, sd_out);
 input clk, reset;
 input [BITWIDTH-1:0] kin1, kin2;
 input muxin1;

@@ -30,7 +30,7 @@ module test_sdgen_2;
 	
 	end
 	
-	sigma_delta_twopiece_top #(
+	sigma_delta_twopiece #(
 		.FSIG(FSIG),
 		.BITWIDTH(BITWIDTH))
 		top_sd (

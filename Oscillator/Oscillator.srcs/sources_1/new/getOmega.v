@@ -20,7 +20,7 @@
  
 
 module getOmega(
-   input CLK100MHZ,
+   input clk,
    input sck,
    input mosi,
    input ssel,
@@ -32,9 +32,8 @@ module getOmega(
     wire [63:0] dataOut;
     //wire omegaOut;
     wire misoOut;
-    SPI_slave SPI(CLK100MHZ, sck, mosi, ssel, misoOut, dataOut);
-  
-    always @(posedge(CLK100MHZ)) // 2 bit counter that cycles which adc is read
+    SPI_slave SPI(clk, sck, mosi, ssel, misoOut, dataOut);
+    always @(posedge(clk)) // 2 bit counter that cycles which adc is read
     begin
     
         LED[15:0]=dataOut[31:16];

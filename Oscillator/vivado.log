@@ -1,0 +1,670 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Jun  2 17:07:17 2020
+# Process ID: 6928
+# Current directory: C:/Users/trent/Coding/ECE224A/Final/Oscillator
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2652 C:\Users\trent\Coding\ECE224A\Final\Oscillator\Oscillator.xpr
+# Log file: C:/Users/trent/Coding/ECE224A/Final/Oscillator/vivado.log
+# Journal file: C:/Users/trent/Coding/ECE224A/Final/Oscillator\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/trent/Coding/ECE224A/Final/Oscillator/Oscillator.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/trent/Coding/ECE224A - VLSI Design Project/Project/Oscillator' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 823.848 ; gain = 92.211
+update_compile_order -fileset sources_1
+file mkdir C:/Users/trent/Coding/ECE224A/Final/Oscillator/Oscillator.srcs/sources_1/new
+close [ open C:/Users/trent/Coding/ECE224A/Final/Oscillator/Oscillator.srcs/sources_1/new/SPI.v w ]
+add_files C:/Users/trent/Coding/ECE224A/Final/Oscillator/Oscillator.srcs/sources_1/new/SPI.v
+update_compile_order -fileset sources_1
+close_project
+open_project C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/trent/Coding/ECE224A - VLSI Design Project/Project/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/src/ip/xadc_wiz_0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/src/ip'.
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'xilinx:valuePermission' : Unexpected attribute
+CRITICAL WARNING: [IP_Flow 19-1977] Unable to read IP file c:/Xilinx/Vivado/2017.2/data/vivado-library-master/ip/Pmods/PmodESP32_v1_0/component.xml. This IP will not be included in the IP Catalog.
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'xilinx:valuePermission' : Unexpected attribute
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'xilinx:valuePermission' : Unexpected attribute
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Xilinx/Vivado/2017.2/data/vivado-library-master'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 923.563 ; gain = 40.426
+update_compile_order -fileset sources_1
+file mkdir C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/sources_1/new
+close [ open C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/sources_1/new/test.v w ]
+add_files C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/sources_1/new/test.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Tue Jun  2 17:52:31 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Tue Jun  2 17:52:31 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 929.074 ; gain = 0.000
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Jun  2 17:53:59 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:01:00 . Memory (MB): peak = 932.289 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Tue Jun  2 17:55:57 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Tue Jun  2 17:55:57 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:09 ; elapsed = 00:01:00 . Memory (MB): peak = 940.910 ; gain = 0.000
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [HDL 9-806] Syntax error near ")". [C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/sources_1/imports/hdl/XADCdemo.v:26]
+[Tue Jun  2 17:57:45 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:00 . Memory (MB): peak = 940.910 ; gain = 0.000
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Jun  2 18:02:44 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 940.910 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Jun  2 18:04:07 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:00 . Memory (MB): peak = 940.910 ; gain = 0.000
+open_hw
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : Jun 15 2017-18:53:26
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 951.035 ; gain = 0.000
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210292A8B358A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210292A8B358A]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.2
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/trent/Coding/ECE224A/Final/Oscillator/.Xil/Vivado-6928-DESKTOP-9E4M902/dcp5/XADCdemo.xdc]
+Finished Parsing XDC File [C:/Users/trent/Coding/ECE224A/Final/Oscillator/.Xil/Vivado-6928-DESKTOP-9E4M902/dcp5/XADCdemo.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1351.977 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 1351.977 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:18 ; elapsed = 00:00:31 . Memory (MB): peak = 1470.930 ; gain = 351.512
+close_design
+close_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1847.641 ; gain = 303.352
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'LED[0]'. [C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/trent/Coding/ECE224A/Final/Oscillator/.Xil/Vivado-6928-DESKTOP-9E4M902/dcp9/XADCdemo.xdc]
+Finished Parsing XDC File [C:/Users/trent/Coding/ECE224A/Final/Oscillator/.Xil/Vivado-6928-DESKTOP-9E4M902/dcp9/XADCdemo.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1930.289 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1930.289 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1
+
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jun  2 18:16:12 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Tue Jun  2 18:16:12 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 2009.461 ; gain = 0.000
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1
+
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jun  2 18:24:36 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Tue Jun  2 18:24:36 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 2017.473 ; gain = 0.000
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1
+
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jun  2 18:29:53 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Tue Jun  2 18:29:53 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 2112.340 ; gain = 0.082
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1
+
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Jun  2 18:36:41 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Tue Jun  2 18:36:41 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 2123.414 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Jun  2 18:40:38 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:11 ; elapsed = 00:01:00 . Memory (MB): peak = 2123.414 ; gain = 0.000
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+open_project C:/Users/trent/Coding/ECE224A/Final/Oscillator/Oscillator.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+current_project Nexys-4-DDR-XADC
+close_project
+update_compile_order -fileset sources_1
+close_project
+open_project C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/src/ip/xadc_wiz_0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/src/ip'.
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'xilinx:valuePermission' : Unexpected attribute
+CRITICAL WARNING: [IP_Flow 19-1977] Unable to read IP file c:/Xilinx/Vivado/2017.2/data/vivado-library-master/ip/Pmods/PmodESP32_v1_0/component.xml. This IP will not be included in the IP Catalog.
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'xilinx:valuePermission' : Unexpected attribute
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'xilinx:valuePermission' : Unexpected attribute
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Xilinx/Vivado/2017.2/data/vivado-library-master'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+open_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 2141.063 ; gain = 0.000
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Tue Jun  2 19:44:43 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Tue Jun  2 19:44:43 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Jun  2 19:49:02 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:00 . Memory (MB): peak = 2141.063 ; gain = 0.000
+open_hw
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : Jun 15 2017-18:53:26
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210292A8B358A]
+ERROR: [Labtoolstcl 44-199] No matching targets found on connected servers: localhost
+Resolution: If needed connect the desired target to a server and use command refresh_hw_server. Then rerun the get_hw_targets command.
+ERROR: [Common 17-39] 'get_hw_targets' failed due to earlier errors.
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+disconnect_hw_server localhost:3121
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210292A8B358A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210292A8B358A]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_hw
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Tue Jun  2 21:39:15 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Tue Jun  2 21:39:15 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Tue Jun  2 21:42:05 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Tue Jun  2 21:42:05 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:00 . Memory (MB): peak = 2141.063 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Tue Jun  2 21:45:26 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Tue Jun  2 21:45:26 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 2141.063 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Jun  2 21:49:32 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:00 . Memory (MB): peak = 2141.063 ; gain = 0.000
+open_hw
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : Jun 15 2017-18:53:26
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210292A8B358A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210292A8B358A]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Wed Jun  3 20:13:09 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Wed Jun  3 20:13:09 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Jun  3 20:17:25 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 2141.063 ; gain = 0.000
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Jun  3 20:20:11 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Wed Jun  3 20:20:11 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+open_hw
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : Jun 15 2017-18:53:26
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2141.063 ; gain = 0.000
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210292A8B358A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210292A8B358A]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+[Wed Jun  3 20:32:06 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Wed Jun  3 20:32:06 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+INFO: [Common 17-344] 'launch_runs' was cancelled
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Jun  3 20:34:29 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:00 . Memory (MB): peak = 2141.063 ; gain = 0.000
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+launch_runs synth_1 -jobs 4
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+[Wed Jun  3 21:30:25 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+INFO: [Common 17-344] 'launch_runs' was cancelled
+launch_runs synth_1 -jobs 4
+[Wed Jun  3 21:31:31 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:00 . Memory (MB): peak = 2141.063 ; gain = 0.000
+launch_runs impl_1 -jobs 4
+[Wed Jun  3 21:32:43 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:00 . Memory (MB): peak = 2141.063 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Jun  3 21:35:36 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 2141.063 ; gain = 0.000
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Wed Jun  3 21:39:38 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Wed Jun  3 21:39:38 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Jun  4 09:29:37 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:02 . Memory (MB): peak = 2141.063 ; gain = 0.000
+disconnect_hw_server localhost:3121
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210292A8B358A]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210292A8B358A]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A8B358A
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Thu Jun  4 21:21:47 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Thu Jun  4 21:21:47 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Thu Jun  4 21:31:51 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Thu Jun  4 21:31:51 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Jun  4 21:37:14 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:00 . Memory (MB): peak = 2141.063 ; gain = 0.000
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Thu Jun  4 21:45:12 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Thu Jun  4 21:45:12 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Jun  4 21:50:39 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:00 . Memory (MB): peak = 2141.063 ; gain = 0.000
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Thu Jun  4 22:01:56 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Thu Jun  4 22:01:56 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Jun  4 22:31:40 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Jun  4 23:06:43 2020] Launched synth_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/synth_1/runme.log
+[Thu Jun  4 23:06:43 2020] Launched impl_1...
+Run output will be captured here: C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:01:01 . Memory (MB): peak = 2141.063 ; gain = 0.000
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/trent/Coding/ECE224A/Final/Nexys-4-DDR-XADC-master/Nexys-4-DDR-XADC/Nexys-4-DDR-XADC.runs/impl_1/XADCdemo.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A8B358A

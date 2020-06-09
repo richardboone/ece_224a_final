@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Jun  9 13:20:07 2020
+# Process ID: 7080
+# Current directory: C:/Users/trent/Coding/ECE224A/Final/innovusOutput/innovusOutput.runs/synth_1
+# Command line: vivado.exe -log chip.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source chip.tcl
+# Log file: C:/Users/trent/Coding/ECE224A/Final/innovusOutput/innovusOutput.runs/synth_1/chip.vds
+# Journal file: C:/Users/trent/Coding/ECE224A/Final/innovusOutput/innovusOutput.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source chip.tcl -notrace

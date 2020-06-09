@@ -1,5 +1,5 @@
 
-module sigma_delta_twopiece #(parameter FSIG = 1000, BITWIDTH = 40, parameter KVAL = {24'h000e2c, 16'he2c0})(clk, reset, kin, sd_out);
+module sigma_delta_twopiece #(parameter FSIG = 1000, BITWIDTH = 40, parameter KVAL = {24'h000e2c, 16'he2c0})(clk, reset, sd_out);
 
 input clk, reset;
 // input [BITWIDTH-1:0] kin;

@@ -11,9 +11,8 @@ output sd_out;
 	wire [BITWIDTH-1:0] capped, gained;
 	reg signed [BITWIDTH-1:0] feedback;
 	//muxes
-	assign muxout1 = muxin1 ? kin1 : kin2;
-	assign muxout3 = sd_out ? 40'hffffff0000 : 40'h0000010000;
-
+	assign muxout1 = muxin1 ? kin2 : kin1;
+	assign muxout3 = sd_out ?  40'h0000010000: 40'hffffff0000;
 	assign intermediate_builder = muxout1;//addsub2
 	
 	// assign small_feedback_sum = intermediate_builder + muxout3;
@@ -37,7 +36,7 @@ output sd_out;
 	sd_one(
 	.clk(clk),
 	.reset(reset),
-	.sd_in(gained[39:24]),
+	.sd_in(gained[BITWIDTH-1 -: 16]),
 	.bs_out(sd_out));
 
 

@@ -44,8 +44,8 @@ module main(
     reg delayOut2;
     always @ (posedge CLK67MHZ)
     begin
-        delayOut1 = sdOut[0];
-        delayOut2 = delayOut1;
+        delayOut1 <= sdOut[0];
+        delayOut2 <= delayOut1;
 
     end
     assign upPort = ~ (delayOut2 & delayOut1);

@@ -1,4 +1,4 @@
-module sd_piece #(parameter POSTGAIN=2, parameter BITWIDTH = 32) (clk, reset, kin1, kin2, muxin1, muxin2, sd_out);
+module sd_piece #(parameter POSTGAIN=2, parameter BITWIDTH = 32, parameter RESETVAL = 0) (clk, reset, kin1, kin2, muxin1, muxin2, sd_out);
 input clk, reset;
 input [BITWIDTH-1:0] kin1, kin2;
 input muxin1, muxin2;
@@ -29,7 +29,8 @@ output sd_out;
 	assign gained = feedback << POSTGAIN;
 	
 	
-	sd2 sd_one(
+	sd2 # (.RESETVAL(RESETVAL))
+	sd_one(
 	.clk(clk),
 	.reset(reset),
 	.sd_in(gained),
@@ -52,7 +53,8 @@ assign kneg = (reset) ? 0 : -kin;
 //sigmadelta1
 
 	sd_piece #(.POSTGAIN(2),
-		.BITWIDTH(BITWIDTH))
+		.BITWIDTH(BITWIDTH),
+		.RESETVAL(0))
 	piece_0 (
 		.clk(clk),
 		.reset(reset),
@@ -63,7 +65,8 @@ assign kneg = (reset) ? 0 : -kin;
 		.sd_out(sd_out[0]));
 		
 	sd_piece #(.POSTGAIN(2),
-		.BITWIDTH(BITWIDTH))
+		.BITWIDTH(BITWIDTH),
+		.RESETVAL(32'h00ffffff))
 	piece_1 (
 		.clk(clk),
 		.reset(reset),
@@ -74,7 +77,8 @@ assign kneg = (reset) ? 0 : -kin;
 		.sd_out(sd_out[1]));
 
 	sd_piece #(.POSTGAIN(2),
-		.BITWIDTH(BITWIDTH))
+		.BITWIDTH(BITWIDTH),
+		.RESETVAL(32'h000fffff))
 	piece_2 (
 		.clk(clk),
 		.reset(reset),

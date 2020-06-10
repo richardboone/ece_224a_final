@@ -26,7 +26,9 @@ module main(
     input mosiPort,
     input sselPort,
     output reg misoPort,
-    output reg [15:0] LED
+    output reg [15:0] LED,
+    output reg upPort,
+    output reg downPort
     );
     wire [63:0] omegaOut;
     getOmega omega(CLK67MHZ,sckPort,mosiPort,sselPort,misoPort,LED,omegaOut);
@@ -35,8 +37,17 @@ module main(
     msbNumZeros(n,omegaOut[39:24], 1'b1);
     wire clk;
     clkDivider getClk(CLK67MHZ, n, clk);
-    
-    
+    wire [1:0] sdOut;
+    sigma_delta_twopiece sd2(clk,1'b0,omegaOut[39:0],sdOut);
+        reg delayOut1;
+    reg delayOut2;
+    always @ (posedge CLK67MHZ)
+    begin
+        delayOut1 = sdOut[0];
+        delayOut2 = delayOut1;
+        upPort = ~ (delayOut2 & delayOut1);
+        downPort = ~ (delayOut2 | delayOut1);
+    end
     
 endmodule
 

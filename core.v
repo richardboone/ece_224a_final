@@ -1,43 +1,42 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Ultra(TM) in wire load mode
 // Version   : P-2019.03
-// Date      : Tue Jun  9 18:40:37 2020
+// Date      : Tue Jun  9 18:48:18 2020
 /////////////////////////////////////////////////////////////
 
 
-module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED, 
-        upPort, downPort );
-  output [15:0] LED;
+module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, upPort, 
+        downPort );
   input CLK67MHZ, sckPort, mosiPort, sselPort, resetPort;
-  output misoPort, upPort, downPort;
-  wire   delayOut1, \omega/SPI/byte_received , \omega/SPI/MOSIr[0] ,
-         \sd2/piece_0/N49 , \sd2/piece_0/N48 , \sd2/piece_0/N47 ,
-         \sd2/piece_0/N46 , \sd2/piece_0/N45 , \sd2/piece_0/N44 ,
-         \sd2/piece_0/N43 , \sd2/piece_0/N42 , \sd2/piece_0/N41 ,
-         \sd2/piece_0/N40 , \sd2/piece_0/N39 , \sd2/piece_0/N38 ,
-         \sd2/piece_0/N37 , \sd2/piece_0/N36 , \sd2/piece_0/N35 ,
-         \sd2/piece_0/N34 , \sd2/piece_0/N33 , \sd2/piece_0/N32 ,
-         \sd2/piece_0/N31 , \sd2/piece_0/N30 , \sd2/piece_0/N29 ,
-         \sd2/piece_0/N28 , \sd2/piece_0/N27 , \sd2/piece_0/N26 ,
-         \sd2/piece_0/N25 , \sd2/piece_0/N24 , \sd2/piece_0/N23 ,
-         \sd2/piece_0/N22 , \sd2/piece_0/N21 , \sd2/piece_0/N20 ,
-         \sd2/piece_0/N19 , \sd2/piece_0/N18 , \sd2/piece_0/N17 ,
-         \sd2/piece_0/N16 , \sd2/piece_0/N15 , \sd2/piece_0/N14 ,
-         \sd2/piece_0/N13 , \sd2/piece_0/N12 , \sd2/piece_0/N11 ,
-         \sd2/piece_0/N10 , \sd2/piece_1/N49 , \sd2/piece_1/N48 ,
-         \sd2/piece_1/N47 , \sd2/piece_1/N46 , \sd2/piece_1/N45 ,
-         \sd2/piece_1/N44 , \sd2/piece_1/N43 , \sd2/piece_1/N42 ,
-         \sd2/piece_1/N41 , \sd2/piece_1/N40 , \sd2/piece_1/N39 ,
-         \sd2/piece_1/N38 , \sd2/piece_1/N37 , \sd2/piece_1/N36 ,
-         \sd2/piece_1/N35 , \sd2/piece_1/N34 , \sd2/piece_1/N33 ,
-         \sd2/piece_1/N32 , \sd2/piece_1/N31 , \sd2/piece_1/N30 ,
-         \sd2/piece_1/N29 , \sd2/piece_1/N28 , \sd2/piece_1/N27 ,
-         \sd2/piece_1/N26 , \sd2/piece_1/N25 , \sd2/piece_1/N24 ,
-         \sd2/piece_1/N23 , \sd2/piece_1/N22 , \sd2/piece_1/N21 ,
-         \sd2/piece_1/N20 , \sd2/piece_1/N19 , \sd2/piece_1/N18 ,
-         \sd2/piece_1/N17 , \sd2/piece_1/N16 , \sd2/piece_1/N15 ,
-         \sd2/piece_1/N14 , \sd2/piece_1/N13 , \sd2/piece_1/N12 ,
-         \sd2/piece_1/N11 , \sd2/piece_1/N10 , \sd2/piece_0/sd_one/N128 ,
+  output upPort, downPort;
+  wire   delayOut1, \omega/SPI/byte_received , \sd2/piece_0/N49 ,
+         \sd2/piece_0/N48 , \sd2/piece_0/N47 , \sd2/piece_0/N46 ,
+         \sd2/piece_0/N45 , \sd2/piece_0/N44 , \sd2/piece_0/N43 ,
+         \sd2/piece_0/N42 , \sd2/piece_0/N41 , \sd2/piece_0/N40 ,
+         \sd2/piece_0/N39 , \sd2/piece_0/N38 , \sd2/piece_0/N37 ,
+         \sd2/piece_0/N36 , \sd2/piece_0/N35 , \sd2/piece_0/N34 ,
+         \sd2/piece_0/N33 , \sd2/piece_0/N32 , \sd2/piece_0/N31 ,
+         \sd2/piece_0/N30 , \sd2/piece_0/N29 , \sd2/piece_0/N28 ,
+         \sd2/piece_0/N27 , \sd2/piece_0/N26 , \sd2/piece_0/N25 ,
+         \sd2/piece_0/N24 , \sd2/piece_0/N23 , \sd2/piece_0/N22 ,
+         \sd2/piece_0/N21 , \sd2/piece_0/N20 , \sd2/piece_0/N19 ,
+         \sd2/piece_0/N18 , \sd2/piece_0/N17 , \sd2/piece_0/N16 ,
+         \sd2/piece_0/N15 , \sd2/piece_0/N14 , \sd2/piece_0/N13 ,
+         \sd2/piece_0/N12 , \sd2/piece_0/N11 , \sd2/piece_0/N10 ,
+         \sd2/piece_1/N49 , \sd2/piece_1/N48 , \sd2/piece_1/N47 ,
+         \sd2/piece_1/N46 , \sd2/piece_1/N45 , \sd2/piece_1/N44 ,
+         \sd2/piece_1/N43 , \sd2/piece_1/N42 , \sd2/piece_1/N41 ,
+         \sd2/piece_1/N40 , \sd2/piece_1/N39 , \sd2/piece_1/N38 ,
+         \sd2/piece_1/N37 , \sd2/piece_1/N36 , \sd2/piece_1/N35 ,
+         \sd2/piece_1/N34 , \sd2/piece_1/N33 , \sd2/piece_1/N32 ,
+         \sd2/piece_1/N31 , \sd2/piece_1/N30 , \sd2/piece_1/N29 ,
+         \sd2/piece_1/N28 , \sd2/piece_1/N27 , \sd2/piece_1/N26 ,
+         \sd2/piece_1/N25 , \sd2/piece_1/N24 , \sd2/piece_1/N23 ,
+         \sd2/piece_1/N22 , \sd2/piece_1/N21 , \sd2/piece_1/N20 ,
+         \sd2/piece_1/N19 , \sd2/piece_1/N18 , \sd2/piece_1/N17 ,
+         \sd2/piece_1/N16 , \sd2/piece_1/N15 , \sd2/piece_1/N14 ,
+         \sd2/piece_1/N13 , \sd2/piece_1/N12 , \sd2/piece_1/N11 ,
+         \sd2/piece_1/N10 , \sd2/piece_0/sd_one/N128 ,
          \sd2/piece_0/sd_one/N127 , \sd2/piece_0/sd_one/N126 ,
          \sd2/piece_0/sd_one/N125 , \sd2/piece_0/sd_one/N124 ,
          \sd2/piece_0/sd_one/N123 , \sd2/piece_0/sd_one/N122 ,
@@ -207,6 +206,7 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
          n1697, n1698, n1699, n1700, n1701, n1702, n1703, n1704;
   wire   [63:0] omegaOut;
   wire   [63:0] \omega/SPI/byte_data_received ;
+  wire   [1:0] \omega/SPI/MOSIr ;
   wire   [1:0] \omega/SPI/SSELr ;
   wire   [2:0] \omega/SPI/SCKr ;
   wire   [39:0] \sd2/piece_0/feedback ;
@@ -218,9 +218,9 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   assign downPort = upPort;
 
   df001_b \omega/SPI/MOSIr_reg[0]  ( .D(mosiPort), .C(CLK67MHZ), .Q(
-        \omega/SPI/MOSIr[0] ) );
-  df001_b \omega/SPI/MOSIr_reg[1]  ( .D(\omega/SPI/MOSIr[0] ), .C(CLK67MHZ), 
-        .Q(misoPort) );
+        \omega/SPI/MOSIr [0]) );
+  df001_b \omega/SPI/MOSIr_reg[1]  ( .D(\omega/SPI/MOSIr [0]), .C(CLK67MHZ), 
+        .Q(\omega/SPI/MOSIr [1]) );
   df001_b \omega/SPI/SSELr_reg[0]  ( .D(sselPort), .C(CLK67MHZ), .Q(
         \omega/SPI/SSELr [0]) );
   df001_b \omega/SPI/SSELr_reg[1]  ( .D(\omega/SPI/SSELr [0]), .C(CLK67MHZ), 
@@ -336,22 +336,38 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
          );
   df001_b \omega/SPI/DATA_reg[15]  ( .D(n352), .C(CLK67MHZ), .Q(omegaOut[15])
          );
-  df001_b \omega/SPI/DATA_reg[16]  ( .D(n351), .C(CLK67MHZ), .Q(LED[0]) );
-  df001_b \omega/SPI/DATA_reg[17]  ( .D(n350), .C(CLK67MHZ), .Q(LED[1]) );
-  df001_b \omega/SPI/DATA_reg[18]  ( .D(n349), .C(CLK67MHZ), .Q(LED[2]) );
-  df001_b \omega/SPI/DATA_reg[19]  ( .D(n348), .C(CLK67MHZ), .Q(LED[3]) );
-  df001_b \omega/SPI/DATA_reg[20]  ( .D(n347), .C(CLK67MHZ), .Q(LED[4]) );
-  df001_b \omega/SPI/DATA_reg[21]  ( .D(n346), .C(CLK67MHZ), .Q(LED[5]) );
-  df001_b \omega/SPI/DATA_reg[22]  ( .D(n345), .C(CLK67MHZ), .Q(LED[6]) );
-  df001_b \omega/SPI/DATA_reg[23]  ( .D(n344), .C(CLK67MHZ), .Q(LED[7]) );
-  df001_b \omega/SPI/DATA_reg[24]  ( .D(n343), .C(CLK67MHZ), .Q(LED[8]) );
-  df001_b \omega/SPI/DATA_reg[25]  ( .D(n342), .C(CLK67MHZ), .Q(LED[9]) );
-  df001_b \omega/SPI/DATA_reg[26]  ( .D(n341), .C(CLK67MHZ), .Q(LED[10]) );
-  df001_b \omega/SPI/DATA_reg[27]  ( .D(n340), .C(CLK67MHZ), .Q(LED[11]) );
-  df001_b \omega/SPI/DATA_reg[28]  ( .D(n339), .C(CLK67MHZ), .Q(LED[12]) );
-  df001_b \omega/SPI/DATA_reg[29]  ( .D(n338), .C(CLK67MHZ), .Q(LED[13]) );
-  df001_b \omega/SPI/DATA_reg[30]  ( .D(n337), .C(CLK67MHZ), .Q(LED[14]) );
-  df001_b \omega/SPI/DATA_reg[31]  ( .D(n336), .C(CLK67MHZ), .Q(LED[15]) );
+  df001_b \omega/SPI/DATA_reg[16]  ( .D(n351), .C(CLK67MHZ), .Q(omegaOut[16])
+         );
+  df001_b \omega/SPI/DATA_reg[17]  ( .D(n350), .C(CLK67MHZ), .Q(omegaOut[17])
+         );
+  df001_b \omega/SPI/DATA_reg[18]  ( .D(n349), .C(CLK67MHZ), .Q(omegaOut[18])
+         );
+  df001_b \omega/SPI/DATA_reg[19]  ( .D(n348), .C(CLK67MHZ), .Q(omegaOut[19])
+         );
+  df001_b \omega/SPI/DATA_reg[20]  ( .D(n347), .C(CLK67MHZ), .Q(omegaOut[20])
+         );
+  df001_b \omega/SPI/DATA_reg[21]  ( .D(n346), .C(CLK67MHZ), .Q(omegaOut[21])
+         );
+  df001_b \omega/SPI/DATA_reg[22]  ( .D(n345), .C(CLK67MHZ), .Q(omegaOut[22])
+         );
+  df001_b \omega/SPI/DATA_reg[23]  ( .D(n344), .C(CLK67MHZ), .Q(omegaOut[23])
+         );
+  df001_b \omega/SPI/DATA_reg[24]  ( .D(n343), .C(CLK67MHZ), .Q(omegaOut[24])
+         );
+  df001_b \omega/SPI/DATA_reg[25]  ( .D(n342), .C(CLK67MHZ), .Q(omegaOut[25])
+         );
+  df001_b \omega/SPI/DATA_reg[26]  ( .D(n341), .C(CLK67MHZ), .Q(omegaOut[26])
+         );
+  df001_b \omega/SPI/DATA_reg[27]  ( .D(n340), .C(CLK67MHZ), .Q(omegaOut[27])
+         );
+  df001_b \omega/SPI/DATA_reg[28]  ( .D(n339), .C(CLK67MHZ), .Q(omegaOut[28])
+         );
+  df001_b \omega/SPI/DATA_reg[29]  ( .D(n338), .C(CLK67MHZ), .Q(omegaOut[29])
+         );
+  df001_b \omega/SPI/DATA_reg[30]  ( .D(n337), .C(CLK67MHZ), .Q(omegaOut[30])
+         );
+  df001_b \omega/SPI/DATA_reg[31]  ( .D(n336), .C(CLK67MHZ), .Q(omegaOut[31])
+         );
   df001_b \omega/SPI/DATA_reg[32]  ( .D(n335), .C(CLK67MHZ), .Q(omegaOut[32])
          );
   df001_b \omega/SPI/DATA_reg[33]  ( .D(n334), .C(CLK67MHZ), .Q(omegaOut[33])
@@ -740,25 +756,25 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   inv1_b U773 ( .A(n677), .Q(n353) );
   cvss_b U774 ( .Q(n327) );
   inv1_b U775 ( .A(\omega/SPI/byte_received ), .Q(n1702) );
-  an11_b U776 ( .A(n1702), .B(LED[2]), .C(\omega/SPI/byte_received ), .D(
-        \omega/SPI/byte_data_received [18]), .Q(n413) );
+  an11_b U776 ( .A(n1702), .B(omegaOut[18]), .C(\omega/SPI/byte_received ), 
+        .D(\omega/SPI/byte_data_received [18]), .Q(n413) );
   inv1_b U777 ( .A(n413), .Q(n349) );
-  an11_b U778 ( .A(n1702), .B(LED[4]), .C(\omega/SPI/byte_received ), .D(
-        \omega/SPI/byte_data_received [20]), .Q(n414) );
+  an11_b U778 ( .A(n1702), .B(omegaOut[20]), .C(\omega/SPI/byte_received ), 
+        .D(\omega/SPI/byte_data_received [20]), .Q(n414) );
   inv1_b U779 ( .A(n414), .Q(n347) );
-  an11_b U780 ( .A(n1702), .B(LED[6]), .C(\omega/SPI/byte_received ), .D(
-        \omega/SPI/byte_data_received [22]), .Q(n415) );
+  an11_b U780 ( .A(n1702), .B(omegaOut[22]), .C(\omega/SPI/byte_received ), 
+        .D(\omega/SPI/byte_data_received [22]), .Q(n415) );
   inv1_b U781 ( .A(n415), .Q(n345) );
-  an11_b U782 ( .A(n1702), .B(LED[8]), .C(\omega/SPI/byte_received ), .D(
-        \omega/SPI/byte_data_received [24]), .Q(n416) );
+  an11_b U782 ( .A(n1702), .B(omegaOut[24]), .C(\omega/SPI/byte_received ), 
+        .D(\omega/SPI/byte_data_received [24]), .Q(n416) );
   inv1_b U783 ( .A(n416), .Q(n343) );
-  an11_b U784 ( .A(n1702), .B(LED[10]), .C(\omega/SPI/byte_received ), .D(
-        \omega/SPI/byte_data_received [26]), .Q(n417) );
+  an11_b U784 ( .A(n1702), .B(omegaOut[26]), .C(\omega/SPI/byte_received ), 
+        .D(\omega/SPI/byte_data_received [26]), .Q(n417) );
   inv1_b U785 ( .A(n417), .Q(n341) );
-  an11_b U786 ( .A(n1702), .B(LED[12]), .C(\omega/SPI/byte_received ), .D(
-        \omega/SPI/byte_data_received [28]), .Q(n418) );
-  an11_b U787 ( .A(n1702), .B(LED[14]), .C(\omega/SPI/byte_received ), .D(
-        \omega/SPI/byte_data_received [30]), .Q(n419) );
+  an11_b U786 ( .A(n1702), .B(omegaOut[28]), .C(\omega/SPI/byte_received ), 
+        .D(\omega/SPI/byte_data_received [28]), .Q(n418) );
+  an11_b U787 ( .A(n1702), .B(omegaOut[30]), .C(\omega/SPI/byte_received ), 
+        .D(\omega/SPI/byte_data_received [30]), .Q(n419) );
   inv1_b U788 ( .A(n419), .Q(n337) );
   an11_b U789 ( .A(n1702), .B(omegaOut[32]), .C(\omega/SPI/byte_received ), 
         .D(\omega/SPI/byte_data_received [32]), .Q(n420) );
@@ -768,8 +784,8 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   inv1_b U792 ( .A(n421), .Q(n333) );
   an11_b U793 ( .A(n1702), .B(omegaOut[36]), .C(\omega/SPI/byte_received ), 
         .D(\omega/SPI/byte_data_received [36]), .Q(n422) );
-  an11_b U794 ( .A(n1702), .B(LED[0]), .C(\omega/SPI/byte_received ), .D(
-        \omega/SPI/byte_data_received [16]), .Q(n423) );
+  an11_b U794 ( .A(n1702), .B(omegaOut[16]), .C(\omega/SPI/byte_received ), 
+        .D(\omega/SPI/byte_data_received [16]), .Q(n423) );
   inv1_b U795 ( .A(n423), .Q(n351) );
   no31_b U796 ( .A(omegaOut[2]), .B(omegaOut[1]), .C(omegaOut[0]), .Q(n649) );
   inv1_b U797 ( .A(omegaOut[3]), .Q(n1664) );
@@ -792,29 +808,29 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   no21_b U814 ( .A(omegaOut[14]), .B(n1284), .Q(n1283) );
   inv1_b U815 ( .A(omegaOut[15]), .Q(n1676) );
   na21_b U816 ( .A(n1283), .B(n1676), .Q(n634) );
-  no21_b U817 ( .A(LED[0]), .B(n634), .Q(n426) );
-  inv1_b U818 ( .A(LED[1]), .Q(n1678) );
+  no21_b U817 ( .A(omegaOut[16]), .B(n634), .Q(n426) );
+  inv1_b U818 ( .A(omegaOut[17]), .Q(n1678) );
   na21_b U819 ( .A(n426), .B(n1678), .Q(n425) );
-  no21_b U820 ( .A(LED[2]), .B(n425), .Q(n428) );
-  inv1_b U821 ( .A(LED[3]), .Q(n1680) );
+  no21_b U820 ( .A(omegaOut[18]), .B(n425), .Q(n428) );
+  inv1_b U821 ( .A(omegaOut[19]), .Q(n1680) );
   na21_b U822 ( .A(n428), .B(n1680), .Q(n430) );
-  no21_b U823 ( .A(LED[4]), .B(n430), .Q(n432) );
-  inv1_b U824 ( .A(LED[5]), .Q(n1682) );
+  no21_b U823 ( .A(omegaOut[20]), .B(n430), .Q(n432) );
+  inv1_b U824 ( .A(omegaOut[21]), .Q(n1682) );
   na21_b U825 ( .A(n432), .B(n1682), .Q(n434) );
-  no21_b U826 ( .A(LED[6]), .B(n434), .Q(n436) );
-  inv1_b U827 ( .A(LED[7]), .Q(n1684) );
+  no21_b U826 ( .A(omegaOut[22]), .B(n434), .Q(n436) );
+  inv1_b U827 ( .A(omegaOut[23]), .Q(n1684) );
   na21_b U828 ( .A(n436), .B(n1684), .Q(n438) );
-  no21_b U829 ( .A(LED[8]), .B(n438), .Q(n440) );
-  inv1_b U830 ( .A(LED[9]), .Q(n1686) );
+  no21_b U829 ( .A(omegaOut[24]), .B(n438), .Q(n440) );
+  inv1_b U830 ( .A(omegaOut[25]), .Q(n1686) );
   na21_b U831 ( .A(n440), .B(n1686), .Q(n442) );
-  no21_b U832 ( .A(LED[10]), .B(n442), .Q(n444) );
-  inv1_b U833 ( .A(LED[11]), .Q(n1688) );
+  no21_b U832 ( .A(omegaOut[26]), .B(n442), .Q(n444) );
+  inv1_b U833 ( .A(omegaOut[27]), .Q(n1688) );
   na21_b U834 ( .A(n444), .B(n1688), .Q(n446) );
-  no21_b U835 ( .A(LED[12]), .B(n446), .Q(n448) );
-  inv1_b U836 ( .A(LED[13]), .Q(n1690) );
+  no21_b U835 ( .A(omegaOut[28]), .B(n446), .Q(n448) );
+  inv1_b U836 ( .A(omegaOut[29]), .Q(n1690) );
   na21_b U837 ( .A(n448), .B(n1690), .Q(n450) );
-  no21_b U838 ( .A(LED[14]), .B(n450), .Q(n452) );
-  inv1_b U839 ( .A(LED[15]), .Q(n1692) );
+  no21_b U838 ( .A(omegaOut[30]), .B(n450), .Q(n452) );
+  inv1_b U839 ( .A(omegaOut[31]), .Q(n1692) );
   na21_b U840 ( .A(n452), .B(n1692), .Q(n454) );
   no21_b U841 ( .A(omegaOut[32]), .B(n454), .Q(n456) );
   inv1_b U842 ( .A(omegaOut[33]), .Q(n1694) );
@@ -833,12 +849,12 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   on11_b U855 ( .A(n1128), .B(n996), .C(n1703), .D(n994), .Q(n662) );
   na21_b U856 ( .A(\sd2/piece_0/sd_one/sd_reg1 [17]), .B(n468), .Q(n666) );
   inv1_b U857 ( .A(n994), .Q(n790) );
-  eo21_b U858 ( .A(LED[2]), .B(n425), .Q(n1075) );
-  an11_b U859 ( .A(LED[2]), .B(n790), .C(n1075), .D(n789), .Q(n626) );
-  eo21_b U860 ( .A(LED[0]), .B(n634), .Q(n1076) );
-  an11_b U861 ( .A(LED[0]), .B(n790), .C(n1076), .D(n789), .Q(n633) );
-  en21_b U862 ( .A(LED[1]), .B(n426), .Q(n1077) );
-  an11_b U863 ( .A(LED[1]), .B(n790), .C(n1077), .D(n789), .Q(n628) );
+  eo21_b U858 ( .A(omegaOut[18]), .B(n425), .Q(n1075) );
+  an11_b U859 ( .A(omegaOut[18]), .B(n790), .C(n1075), .D(n789), .Q(n626) );
+  eo21_b U860 ( .A(omegaOut[16]), .B(n634), .Q(n1076) );
+  an11_b U861 ( .A(omegaOut[16]), .B(n790), .C(n1076), .D(n789), .Q(n633) );
+  en21_b U862 ( .A(omegaOut[17]), .B(n426), .Q(n1077) );
+  an11_b U863 ( .A(omegaOut[17]), .B(n790), .C(n1077), .D(n789), .Q(n628) );
   on21_b U864 ( .A(\sd2/piece_0/sd_one/sd_reg1 [17]), .B(n633), .C(n628), .Q(
         n619) );
   inv1_b U865 ( .A(n633), .Q(n427) );
@@ -847,72 +863,72 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   na21_b U868 ( .A(n622), .B(n626), .Q(n609) );
   na21_b U869 ( .A(n1704), .B(n609), .Q(n611) );
   on21_b U870 ( .A(n626), .B(n620), .C(n611), .Q(n612) );
-  eo21_b U871 ( .A(LED[3]), .B(n428), .Q(n1079) );
+  eo21_b U871 ( .A(omegaOut[19]), .B(n428), .Q(n1079) );
   on11_b U872 ( .A(n1680), .B(n994), .C(n1079), .D(n996), .Q(n615) );
   inv1_b U873 ( .A(n612), .Q(n610) );
   inv1_b U874 ( .A(n615), .Q(n617) );
   no21_b U875 ( .A(n610), .B(n617), .Q(n429) );
   on11_b U876 ( .A(n612), .B(n615), .C(n1704), .D(n429), .Q(n602) );
-  eo21_b U877 ( .A(LED[4]), .B(n430), .Q(n1082) );
-  an11_b U878 ( .A(LED[4]), .B(n790), .C(n1082), .D(n789), .Q(n607) );
+  eo21_b U877 ( .A(omegaOut[20]), .B(n430), .Q(n1082) );
+  an11_b U878 ( .A(omegaOut[20]), .B(n790), .C(n1082), .D(n789), .Q(n607) );
   inv1_b U879 ( .A(n602), .Q(n604) );
   inv1_b U880 ( .A(n607), .Q(n431) );
   on21_b U881 ( .A(n604), .B(n431), .C(n1704), .Q(n595) );
   on21_b U882 ( .A(n602), .B(n607), .C(n595), .Q(n596) );
-  eo21_b U883 ( .A(LED[5]), .B(n432), .Q(n1084) );
+  eo21_b U883 ( .A(omegaOut[21]), .B(n432), .Q(n1084) );
   on11_b U884 ( .A(n1682), .B(n994), .C(n1084), .D(n996), .Q(n598) );
   no21_b U885 ( .A(n594), .B(n600), .Q(n433) );
   on11_b U886 ( .A(n596), .B(n598), .C(n1704), .D(n433), .Q(n587) );
-  eo21_b U887 ( .A(LED[6]), .B(n434), .Q(n1087) );
-  an11_b U888 ( .A(LED[6]), .B(n790), .C(n1087), .D(n789), .Q(n592) );
+  eo21_b U887 ( .A(omegaOut[22]), .B(n434), .Q(n1087) );
+  an11_b U888 ( .A(omegaOut[22]), .B(n790), .C(n1087), .D(n789), .Q(n592) );
   inv1_b U889 ( .A(n587), .Q(n589) );
   inv1_b U890 ( .A(n592), .Q(n435) );
   on21_b U891 ( .A(n589), .B(n435), .C(n1704), .Q(n580) );
   on21_b U892 ( .A(n587), .B(n592), .C(n580), .Q(n581) );
-  eo21_b U893 ( .A(LED[7]), .B(n436), .Q(n1089) );
+  eo21_b U893 ( .A(omegaOut[23]), .B(n436), .Q(n1089) );
   on11_b U894 ( .A(n1684), .B(n994), .C(n1089), .D(n996), .Q(n583) );
   inv1_b U895 ( .A(n581), .Q(n579) );
   inv1_b U896 ( .A(n583), .Q(n585) );
   no21_b U897 ( .A(n579), .B(n585), .Q(n437) );
   on11_b U898 ( .A(n581), .B(n583), .C(n1704), .D(n437), .Q(n572) );
-  eo21_b U899 ( .A(LED[8]), .B(n438), .Q(n1092) );
-  an11_b U900 ( .A(LED[8]), .B(n790), .C(n1092), .D(n789), .Q(n577) );
+  eo21_b U899 ( .A(omegaOut[24]), .B(n438), .Q(n1092) );
+  an11_b U900 ( .A(omegaOut[24]), .B(n790), .C(n1092), .D(n789), .Q(n577) );
   inv1_b U901 ( .A(n572), .Q(n574) );
   inv1_b U902 ( .A(n577), .Q(n439) );
   on21_b U903 ( .A(n574), .B(n439), .C(n1704), .Q(n565) );
   on21_b U904 ( .A(n572), .B(n577), .C(n565), .Q(n566) );
-  eo21_b U905 ( .A(LED[9]), .B(n440), .Q(n1094) );
+  eo21_b U905 ( .A(omegaOut[25]), .B(n440), .Q(n1094) );
   on11_b U906 ( .A(n1686), .B(n994), .C(n1094), .D(n996), .Q(n568) );
   no21_b U907 ( .A(n564), .B(n570), .Q(n441) );
   on11_b U908 ( .A(n566), .B(n568), .C(n1704), .D(n441), .Q(n557) );
-  eo21_b U909 ( .A(LED[10]), .B(n442), .Q(n1097) );
-  an11_b U910 ( .A(LED[10]), .B(n790), .C(n1097), .D(n789), .Q(n562) );
+  eo21_b U909 ( .A(omegaOut[26]), .B(n442), .Q(n1097) );
+  an11_b U910 ( .A(omegaOut[26]), .B(n790), .C(n1097), .D(n789), .Q(n562) );
   inv1_b U911 ( .A(n557), .Q(n559) );
   on21_b U912 ( .A(n559), .B(n443), .C(n1704), .Q(n550) );
   on21_b U913 ( .A(n557), .B(n562), .C(n550), .Q(n551) );
-  eo21_b U914 ( .A(LED[11]), .B(n444), .Q(n1099) );
+  eo21_b U914 ( .A(omegaOut[27]), .B(n444), .Q(n1099) );
   on11_b U915 ( .A(n1688), .B(n994), .C(n1099), .D(n996), .Q(n553) );
   inv1_b U916 ( .A(n551), .Q(n549) );
   inv1_b U917 ( .A(n553), .Q(n555) );
   no21_b U918 ( .A(n549), .B(n555), .Q(n445) );
   on11_b U919 ( .A(n551), .B(n553), .C(n1704), .D(n445), .Q(n542) );
-  eo21_b U920 ( .A(LED[12]), .B(n446), .Q(n1102) );
-  an11_b U921 ( .A(LED[12]), .B(n790), .C(n1102), .D(n789), .Q(n547) );
+  eo21_b U920 ( .A(omegaOut[28]), .B(n446), .Q(n1102) );
+  an11_b U921 ( .A(omegaOut[28]), .B(n790), .C(n1102), .D(n789), .Q(n547) );
   inv1_b U922 ( .A(n542), .Q(n544) );
   inv1_b U923 ( .A(n547), .Q(n447) );
   on21_b U924 ( .A(n544), .B(n447), .C(n1704), .Q(n535) );
   on21_b U925 ( .A(n542), .B(n547), .C(n535), .Q(n536) );
-  eo21_b U926 ( .A(LED[13]), .B(n448), .Q(n1104) );
+  eo21_b U926 ( .A(omegaOut[29]), .B(n448), .Q(n1104) );
   on11_b U927 ( .A(n1690), .B(n994), .C(n1104), .D(n996), .Q(n538) );
   no21_b U928 ( .A(n534), .B(n540), .Q(n449) );
   on11_b U929 ( .A(n536), .B(n538), .C(n1704), .D(n449), .Q(n527) );
-  eo21_b U930 ( .A(LED[14]), .B(n450), .Q(n1107) );
-  an11_b U931 ( .A(LED[14]), .B(n790), .C(n1107), .D(n789), .Q(n532) );
+  eo21_b U930 ( .A(omegaOut[30]), .B(n450), .Q(n1107) );
+  an11_b U931 ( .A(omegaOut[30]), .B(n790), .C(n1107), .D(n789), .Q(n532) );
   inv1_b U932 ( .A(n527), .Q(n529) );
   inv1_b U933 ( .A(n532), .Q(n451) );
   on21_b U934 ( .A(n529), .B(n451), .C(n1704), .Q(n520) );
   on21_b U935 ( .A(n527), .B(n532), .C(n520), .Q(n521) );
-  eo21_b U936 ( .A(LED[15]), .B(n452), .Q(n1109) );
+  eo21_b U936 ( .A(omegaOut[31]), .B(n452), .Q(n1109) );
   on11_b U937 ( .A(n1692), .B(n994), .C(n1109), .D(n996), .Q(n523) );
   inv1_b U938 ( .A(n521), .Q(n519) );
   inv1_b U939 ( .A(n523), .Q(n525) );
@@ -1581,8 +1597,8 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   no31_b U1497 ( .A(\omega/SPI/SSELr [1]), .B(\omega/SPI/SCKr [2]), .C(n913), 
         .Q(n914) );
   iid1_b U1498 ( .A(n914), .Q(n915) );
-  mx21_b U1499 ( .I0(\omega/SPI/byte_data_received [0]), .I1(misoPort), .S(
-        n915), .Q(n408) );
+  mx21_b U1499 ( .I0(\omega/SPI/byte_data_received [0]), .I1(
+        \omega/SPI/MOSIr [1]), .S(n915), .Q(n408) );
   mx21_b U1500 ( .I0(\omega/SPI/byte_data_received [1]), .I1(
         \omega/SPI/byte_data_received [0]), .S(n914), .Q(n407) );
   mx21_b U1501 ( .I0(\omega/SPI/byte_data_received [2]), .I1(
@@ -1752,9 +1768,12 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   inv1_b U1621 ( .A(\sd2/piece_1/feedback [38]), .Q(n1487) );
   on11_b U1622 ( .A(n1279), .B(n1700), .C(n1280), .D(n1074), .Q(n1326) );
   inv1_b U1623 ( .A(n1326), .Q(n1134) );
-  an11_b U1624 ( .A(n1124), .B(LED[2]), .C(n1123), .D(n1075), .Q(n1271) );
-  an11_b U1625 ( .A(n1124), .B(LED[0]), .C(n1123), .D(n1076), .Q(n1277) );
-  an11_b U1626 ( .A(n1124), .B(LED[1]), .C(n1123), .D(n1077), .Q(n1273) );
+  an11_b U1624 ( .A(n1124), .B(omegaOut[18]), .C(n1123), .D(n1075), .Q(n1271)
+         );
+  an11_b U1625 ( .A(n1124), .B(omegaOut[16]), .C(n1123), .D(n1076), .Q(n1277)
+         );
+  an11_b U1626 ( .A(n1124), .B(omegaOut[17]), .C(n1123), .D(n1077), .Q(n1273)
+         );
   on21_b U1627 ( .A(\sd2/piece_1/sd_one/sd_reg1 [17]), .B(n1277), .C(n1273), 
         .Q(n1264) );
   inv1_b U1628 ( .A(n1277), .Q(n1078) );
@@ -1767,7 +1786,8 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   inv1_b U1635 ( .A(n1081), .Q(n1262) );
   no21_b U1636 ( .A(n1257), .B(n1262), .Q(n1080) );
   on11_b U1637 ( .A(n1259), .B(n1081), .C(n1248), .D(n1080), .Q(n1252) );
-  an11_b U1638 ( .A(n1124), .B(LED[4]), .C(n1123), .D(n1082), .Q(n1083) );
+  an11_b U1638 ( .A(n1124), .B(omegaOut[20]), .C(n1123), .D(n1082), .Q(n1083)
+         );
   inv1_b U1639 ( .A(n1252), .Q(n1249) );
   inv1_b U1640 ( .A(n1083), .Q(n1255) );
   on21_b U1641 ( .A(n1249), .B(n1255), .C(n1248), .Q(n1242) );
@@ -1777,7 +1797,8 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   inv1_b U1645 ( .A(n1086), .Q(n1246) );
   no21_b U1646 ( .A(n1241), .B(n1246), .Q(n1085) );
   on11_b U1647 ( .A(n1243), .B(n1086), .C(n1248), .D(n1085), .Q(n1237) );
-  an11_b U1648 ( .A(n1124), .B(LED[6]), .C(n1123), .D(n1087), .Q(n1088) );
+  an11_b U1648 ( .A(n1124), .B(omegaOut[22]), .C(n1123), .D(n1087), .Q(n1088)
+         );
   inv1_b U1649 ( .A(n1088), .Q(n1240) );
   on21_b U1650 ( .A(n1235), .B(n1240), .C(n1248), .Q(n1229) );
   on21_b U1651 ( .A(n1237), .B(n1088), .C(n1229), .Q(n1230) );
@@ -1785,7 +1806,8 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   inv1_b U1653 ( .A(n1091), .Q(n1233) );
   no21_b U1654 ( .A(n1228), .B(n1233), .Q(n1090) );
   on11_b U1655 ( .A(n1230), .B(n1091), .C(n1248), .D(n1090), .Q(n1224) );
-  an11_b U1656 ( .A(n1124), .B(LED[8]), .C(n1123), .D(n1092), .Q(n1093) );
+  an11_b U1656 ( .A(n1124), .B(omegaOut[24]), .C(n1123), .D(n1092), .Q(n1093)
+         );
   inv1_b U1657 ( .A(n1224), .Q(n1222) );
   on21_b U1658 ( .A(n1222), .B(n1227), .C(n1248), .Q(n1216) );
   on21_b U1659 ( .A(n1224), .B(n1093), .C(n1216), .Q(n1217) );
@@ -1794,7 +1816,8 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   inv1_b U1662 ( .A(n1096), .Q(n1220) );
   no21_b U1663 ( .A(n1215), .B(n1220), .Q(n1095) );
   on11_b U1664 ( .A(n1217), .B(n1096), .C(n1248), .D(n1095), .Q(n1211) );
-  an11_b U1665 ( .A(n1124), .B(LED[10]), .C(n1123), .D(n1097), .Q(n1098) );
+  an11_b U1665 ( .A(n1124), .B(omegaOut[26]), .C(n1123), .D(n1097), .Q(n1098)
+         );
   inv1_b U1666 ( .A(n1098), .Q(n1214) );
   on21_b U1667 ( .A(n1209), .B(n1214), .C(n1248), .Q(n1203) );
   on21_b U1668 ( .A(n1211), .B(n1098), .C(n1203), .Q(n1204) );
@@ -1803,7 +1826,8 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   inv1_b U1671 ( .A(n1101), .Q(n1207) );
   no21_b U1672 ( .A(n1202), .B(n1207), .Q(n1100) );
   on11_b U1673 ( .A(n1204), .B(n1101), .C(n1248), .D(n1100), .Q(n1198) );
-  an11_b U1674 ( .A(n1124), .B(LED[12]), .C(n1123), .D(n1102), .Q(n1103) );
+  an11_b U1674 ( .A(n1124), .B(omegaOut[28]), .C(n1123), .D(n1102), .Q(n1103)
+         );
   inv1_b U1675 ( .A(n1198), .Q(n1196) );
   inv1_b U1676 ( .A(n1103), .Q(n1201) );
   on21_b U1677 ( .A(n1196), .B(n1201), .C(n1248), .Q(n1190) );
@@ -1812,7 +1836,8 @@ module main ( CLK67MHZ, sckPort, mosiPort, sselPort, resetPort, misoPort, LED,
   inv1_b U1680 ( .A(n1106), .Q(n1194) );
   no21_b U1681 ( .A(n1189), .B(n1194), .Q(n1105) );
   on11_b U1682 ( .A(n1191), .B(n1106), .C(n1248), .D(n1105), .Q(n1185) );
-  an11_b U1683 ( .A(n1124), .B(LED[14]), .C(n1123), .D(n1107), .Q(n1108) );
+  an11_b U1683 ( .A(n1124), .B(omegaOut[30]), .C(n1123), .D(n1107), .Q(n1108)
+         );
   inv1_b U1684 ( .A(n1185), .Q(n1183) );
   inv1_b U1685 ( .A(n1108), .Q(n1188) );
   on21_b U1686 ( .A(n1183), .B(n1188), .C(n1248), .Q(n1177) );

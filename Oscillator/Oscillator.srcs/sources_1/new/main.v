@@ -26,13 +26,13 @@ module main(
     input mosiPort,
     input sselPort,
     input resetPort,
-    output misoPort,
-    output [15:0] LED,
+    //output misoPort,
+    //output [15:0] LED,
     output upPort,
     output downPort
     );
     wire [63:0] omegaOut;
-    getOmega omega(CLK67MHZ,sckPort,mosiPort,sselPort,misoPort,LED,omegaOut);
+    getOmega omega(CLK67MHZ,sckPort,mosiPort,sselPort,omegaOut);
     
     wire [3:0] n;
     msbNumZeros(n,omegaOut[39:24], 1'b1);

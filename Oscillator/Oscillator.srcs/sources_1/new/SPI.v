@@ -25,7 +25,7 @@ module SPI_slave(
     input SCK,
     input MOSI,
     input SSEL,
-    output wire MISO,
+    //output wire MISO,
     output reg [63:0] DATA
     );
 

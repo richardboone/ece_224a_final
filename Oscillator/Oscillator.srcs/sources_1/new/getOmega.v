@@ -24,24 +24,20 @@ module getOmega(
    input sck,
    input mosi,
    input ssel,
-   output reg miso,
-   output reg [15:0] LED,
-   output reg [63:0] omega
+   output wire miso,
+   output wire [15:0] LED,
+   output wire [63:0] omega
 );
     //reg [39:0] omega; // Angle for frequency
     wire [63:0] dataOut;
     //wire omegaOut;
     wire misoOut;
     SPI_slave SPI(clk, sck, mosi, ssel, misoOut, dataOut);
-    always @(posedge(clk)) // 2 bit counter that cycles which adc is read
-    begin
-    
-        LED[15:0]=dataOut[31:16];
-        omega[63:0]=dataOut[63:0];
-        miso = misoOut;
-        
+   
+    assign LED[15:0]=dataOut[31:16];
+    assign omega[63:0]=dataOut[63:0];
+    assign miso = misoOut;
 
-    end
       
 
     

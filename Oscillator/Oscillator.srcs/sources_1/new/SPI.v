@@ -25,7 +25,7 @@ module SPI_slave(
     input SCK,
     input MOSI,
     input SSEL,
-    output reg MISO,
+    output wire MISO,
     output reg [63:0] DATA
     );
 
@@ -62,11 +62,12 @@ begin
 
     // implement a shift-left register (since we receive the data MSB first)
     byte_data_received <= {byte_data_received[62:0], MOSI_data};
-    MISO = MOSI_data;
+    //MISO = MOSI_data;
   end
   //leds[15] = 1'b1;
 end
 
+assign MISO = MOSI_data;
 
 //always @(posedge clk) byte_received <= SSEL_active && SCK_risingedge && (bitcnt==3'b000);
 always @(posedge clk) byte_received <= ~SSEL_active;

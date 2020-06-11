@@ -26,7 +26,7 @@ module getOmega(
    input ssel,
    //output wire miso,
    //output wire [15:0] LED,
-   output wire [63:0] omega
+   output wire [39:0] omega
 );
     //reg [39:0] omega; // Angle for frequency
     wire [39:0] dataOut;

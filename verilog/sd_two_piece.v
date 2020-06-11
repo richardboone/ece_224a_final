@@ -30,11 +30,11 @@ output sd_out;
 	
 	
 	sd2 # (.RESETVAL(0),
-	.BW(16))
+	.BW(12))
 	sd_one(
 	.clk(clk),
 	.reset(reset),
-	.sd_in(gained[BITWIDTH-1 -: 16]),
+	.sd_in(gained[BITWIDTH-1 -: 12]),
 	.bs_out(sd_out));
 
 

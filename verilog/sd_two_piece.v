@@ -16,8 +16,8 @@ output sd_out;
 	// assign muxout3 = sd_out ?  40'h0000000001: 40'hffffffffff;
 	assign intermediate_builder = muxout1;//addsub2
 	
-	capped_adder #(.BITWIDTH(BITWIDTH)) add_1 (intermediate_builder, muxout3, small_feedback_sum);
-	capped_adder #(.BITWIDTH(BITWIDTH)) add_2 (small_feedback_sum, feedback, mid_feedback_sum);
+	capped_adder_2 #(.BITWIDTH(BITWIDTH)) add_1 (intermediate_builder, muxout3, small_feedback_sum);
+	capped_adder_2 #(.BITWIDTH(BITWIDTH)) add_2 (small_feedback_sum, feedback, mid_feedback_sum);
 	
 	
 	// assign capped = feedback_sum[16] ? 16'hffff : feedback_sum;

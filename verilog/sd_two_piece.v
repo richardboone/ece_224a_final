@@ -4,19 +4,17 @@ input clk, reset;
 input [BITWIDTH-1:0] kin1, kin2;
 input muxin1;
 output sd_out;
-	wire [BITWIDTH-1:0] muxout1, muxout2, muxout3;
+	wire [BITWIDTH-1:0] muxout1, muxout3;
 	wire [BITWIDTH-1:0] intermediate_builder;
 	
 	wire [BITWIDTH-1:0] small_feedback_sum, mid_feedback_sum;
-	wire [BITWIDTH-1:0] capped, gained;
+	wire [BITWIDTH-1:0] gained;
 	reg signed [BITWIDTH-1:0] feedback;
 	//muxes
 	assign muxout1 = muxin1 ? kin2 : kin1;
 	assign muxout3 = sd_out ?  40'h0000010000: 40'hffffff0000;
 	assign intermediate_builder = muxout1;//addsub2
 	
-	// assign small_feedback_sum = intermediate_builder + muxout3;
-	// assign mid_feedback_sum = small_feedback_sum + feedback;
 	capped_adder #(.BITWIDTH(BITWIDTH)) add_1 (intermediate_builder, muxout3, small_feedback_sum);
 	capped_adder #(.BITWIDTH(BITWIDTH)) add_2 (small_feedback_sum, feedback, mid_feedback_sum);
 	

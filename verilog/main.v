@@ -31,7 +31,7 @@ module main(
     output upPort,
     output downPort
     );
-    wire [63:0] omegaOut;
+    wire [39:0] omegaOut;
     getOmega omega(CLK67MHZ,sckPort,mosiPort,sselPort,omegaOut);
     
     wire [3:0] n, ntemp;

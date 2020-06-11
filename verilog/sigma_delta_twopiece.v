@@ -1,11 +1,14 @@
 
 module sigma_delta_twopiece #(parameter FSIG = 1000, BITWIDTH = 40)(clk, reset, kin, sd_out);
+localparam BW_TOP = 12;
 
 input clk, reset;
-input [BITWIDTH-1:0] kin;
+input [BITWIDTH-13:0] kin;
 output [1:0] sd_out;
 
 wire [BITWIDTH-1:0] kpos, kneg;
+wire [BITWIDTH-1:0] temp_kin;
+assign temp_kin = {{BW_TOP{1'b0}}, kin};
 
 assign kpos = (reset) ? 0 : kin;
 assign kneg = (reset) ? 0 : -kin;

@@ -32,7 +32,6 @@ module main(
     output downPort
     );
     wire [39:0] omegaOut;
-	assign omegaOut[39:28] = 12'h000;
     getOmega omega(CLK67MHZ,sckPort,mosiPort,sselPort,omegaOut);
     
     wire [3:0] n, ntemp;
@@ -42,9 +41,9 @@ module main(
     wire clk;
     clkDivider getClk(CLK67MHZ, n, clk);
     wire [1:0] sdOut;
-	wire [39:0] sd_kin;
+	wire [27:0] sd_kin;
 	
-	bitShifter bs(CLK67MHZ, omegaOut[27:0], sd_kin, ntemp);
+	bitShifter bs(CLK67MHZ, omegaOut, sd_kin, ntemp);
     sigma_delta_twopiece sd2(clk,resetPort,sd_kin,sdOut);
     reg delayOut1;
     reg delayOut2;

@@ -20,22 +20,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module divide_2(
-    input inClk,
-    input enable,
-    output reg outClk
-    );
-    
-initial begin
-    outClk = 0;
-end
-always @(posedge inClk) begin
-	if (enable) begin
-		outClk <= ~outClk;
-	end
-end
-
-endmodule
 
 
 
@@ -129,4 +113,23 @@ module clkDivider(
     
     
     
+endmodule
+
+
+
+module divide_2(
+    input inClk,
+    input enable,
+    output reg outClk
+    );
+    
+initial begin
+    outClk = 0;
+end
+always @(posedge inClk) begin
+	if (enable) begin
+		outClk <= ~outClk;
+	end
+end
+
 endmodule

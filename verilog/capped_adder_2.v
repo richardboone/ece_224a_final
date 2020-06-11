@@ -14,6 +14,7 @@ module capped_adder_2#(parameter BITWIDTH=32) (a, b, out);
 			2'b10 : out = {1'b1, {smallBW{1'b0}}};
 			default : out = tempsum;
 		endcase
+	end
 	// assign overflow = tempsum[BITWIDTH] ^ tempsum[BITWIDTH-1];
 	
 	// assign out = (!(overflow&signcheck)) ? tempsum[BITWIDTH-1:0] : ((a[BITWIDTH-1]) ? {1'b1, {smallBW{1'b0}} } :{1'b0, {smallBW{1'b1}}});

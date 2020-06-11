@@ -10,8 +10,8 @@ wire [BITWIDTH-1:0] kpos, kneg;
 wire [BITWIDTH-1:0] temp_kin;
 assign temp_kin = {{BW_TOP{1'b0}}, kin};
 
-assign kpos = (reset) ? 0 : kin;
-assign kneg = (reset) ? 0 : -kin;
+assign kpos = (reset) ? 0 : temp_kin;
+assign kneg = (reset) ? 0 : -temp_kin;
 
 //sigmadelta1
 //40'h8000000000

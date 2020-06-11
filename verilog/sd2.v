@@ -1,4 +1,4 @@
-module sd2 #(parameter BW = 32, parameter RESETVAL = 0) (clk, reset, sd_in, bs_out);
+module sd2 #(parameter BW = 12, parameter RESETVAL = 0) (clk, reset, sd_in, bs_out);
 
 // input bitwidth
 // parameter BW = 32;

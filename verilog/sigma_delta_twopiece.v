@@ -16,8 +16,7 @@ assign kneg = (reset) ? 0 : -temp_kin;
 //sigmadelta1
 //40'h8000000000
 //40'h7fffffffff
-	sd_two_piece #(.POSTGAIN(2),
-		.BITWIDTH(BITWIDTH),
+	sd_two_piece #(.BITWIDTH(BITWIDTH),
 		.RESETVAL(40'h7fffffffff))
 	piece_0 (
 		.clk(clk),
@@ -27,8 +26,7 @@ assign kneg = (reset) ? 0 : -temp_kin;
 		.muxin1(sd_out[1]),
 		.sd_out(sd_out[0]));
 		
-	sd_two_piece #(.POSTGAIN(2),
-		.BITWIDTH(BITWIDTH),
+	sd_two_piece #(.BITWIDTH(BITWIDTH),
 		.RESETVAL(40'h0000000000))
 	piece_1 (
 		.clk(clk),

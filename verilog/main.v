@@ -114,8 +114,6 @@ begin
 		outval <= internal_reg;
 		outdivider <= countshift;
 	end
-	
-	
 
 end
 

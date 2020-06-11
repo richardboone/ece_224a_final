@@ -22,7 +22,6 @@
 
 module divide_2(
     input inClk,
-    input reset,
     input enable,
     output reg outClk
     );
@@ -31,10 +30,7 @@ initial begin
     outClk = 0;
 end
 always @(posedge inClk) begin
-	if (reset) begin
-		outClk <= 0;
-	end
-	else if (enable) begin
+	if (enable) begin
 		outClk <= ~outClk;
 	end
 end
@@ -51,17 +47,17 @@ module clkDivider(
     reg [10:0] enReg;
     wire [11:0] clkReg;
     assign clkReg[0] = inClk;
-    divide_2 div2To1(clkReg[0], 1'b0, enReg[0], clkReg[1]);
-    divide_2 div2To2(clkReg[1], 1'b0, enReg[1], clkReg[2]);
-    divide_2 div2To3(clkReg[2], 1'b0, enReg[2], clkReg[3]);
-    divide_2 div2To4(clkReg[3], 1'b0, enReg[3], clkReg[4]);
-    divide_2 div2To5(clkReg[4], 1'b0, enReg[4], clkReg[5]);
-    divide_2 div2To6(clkReg[5], 1'b0, enReg[5], clkReg[6]);
-    divide_2 div2To7(clkReg[6], 1'b0, enReg[6], clkReg[7]);
-    divide_2 div2To8(clkReg[7], 1'b0, enReg[7], clkReg[8]);
-    divide_2 div2To9(clkReg[8], 1'b0, enReg[8], clkReg[9]);
-    divide_2 div2To10(clkReg[9], 1'b0, enReg[9], clkReg[10]);
-    divide_2 div2To11(clkReg[10], 1'b0, enReg[10], clkReg[11]);
+    divide_2 div2To1(clkReg[0], enReg[0], clkReg[1]);
+    divide_2 div2To2(clkReg[1], enReg[1], clkReg[2]);
+    divide_2 div2To3(clkReg[2], enReg[2], clkReg[3]);
+    divide_2 div2To4(clkReg[3], enReg[3], clkReg[4]);
+    divide_2 div2To5(clkReg[4], enReg[4], clkReg[5]);
+    divide_2 div2To6(clkReg[5], enReg[5], clkReg[6]);
+    divide_2 div2To7(clkReg[6], enReg[6], clkReg[7]);
+    divide_2 div2To8(clkReg[7], enReg[7], clkReg[8]);
+    divide_2 div2To9(clkReg[8], enReg[8], clkReg[9]);
+    divide_2 div2To10(clkReg[9], enReg[9], clkReg[10]);
+    divide_2 div2To11(clkReg[10], enReg[10], clkReg[11]);
     
     always @ inClk begin
         case(n)

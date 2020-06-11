@@ -13,6 +13,7 @@ output sd_out;
 	//muxes
 	assign muxout1 = muxin1 ? kin2 : kin1;
 	assign muxout3 = sd_out ?  40'h0000010000: 40'hffffff0000;
+	// assign muxout3 = sd_out ?  40'h0000000001: 40'hffffffffff;
 	assign intermediate_builder = muxout1;//addsub2
 	
 	capped_adder #(.BITWIDTH(BITWIDTH)) add_1 (intermediate_builder, muxout3, small_feedback_sum);

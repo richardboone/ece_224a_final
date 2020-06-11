@@ -27,10 +27,10 @@ bw = 40
 # timearray = np.linspace(start=0.02, stop=0.045, num=len(newarray))
 newarray = np.loadtxt("output.txt", dtype='int32', delimiter=',', converters={_:lambda s: int(s, 16) for _ in range(2)});
 print(len(newarray))
-timearray = np.linspace(start=0, stop=0.45, num=len(newarray))
+timearray = np.linspace(start=0, stop=0.2, num=len(newarray))
 print(newarray)
 plt.plot(timearray, newarray[:,0]);
-plt.plot(timearray, newarray[:,1]);
+# plt.plot(timearray, newarray[:,1]);
 plt.show()
 # plt.plot(timearray, newarray[:, 1]);
 # plt.show()

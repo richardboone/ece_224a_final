@@ -44,7 +44,7 @@ module main(
 	wire [27:0] sd_kin;
 	
 	bitShifter bs(CLK67MHZ, omegaOut, sd_kin, ntemp);
-    sigma_delta_twopiece sd2(clk,resetPort,sd_kin,sdOut);
+    sigma_delta_twopiece sigma_delta_twopiece(clk,resetPort,sd_kin,sdOut);
     reg delayOut1;
     reg delayOut2;
     always @ (posedge CLK67MHZ)

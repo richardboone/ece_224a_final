@@ -1,6 +1,6 @@
 module test_sdgen_2;
 
-	reg [39:0] kval;
+	reg [27:0] kval;
 	parameter FSIG = 1000;
 	parameter BITWIDTH = 40;
 	parameter CLK_PERIOD = 100;
@@ -21,8 +21,8 @@ module test_sdgen_2;
 	initial begin
 		// kval <= {16'h0e2b, 16'hffff};
 		// kval <= {16'h0e2c, 16'ha000};//3627 in lowest bits
-		// kval <= {40'h000e2b9946};//3627 in lowest bits
-		kval <= {40'h00154165e9};//3627 in lowest bits
+		kval <= {28'he2b9946};//3627 in lowest bits
+		// kval <= {40'h00154165e9};//3627 in lowest bits
 		// kval <= {40'h000274518b};//3627 in lowest bits
 		// kval <= {40'h00088b2f70};//3627 in lowest bits
 		// kval <= {16'h0000, 16'b0000111000101011‬};

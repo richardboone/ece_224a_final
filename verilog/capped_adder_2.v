@@ -9,6 +9,7 @@ module capped_adder_2#(parameter BITWIDTH=32) (a, b, out);
 	assign signcheck = !(a[BITWIDTH-1] ^ b[BITWIDTH-1]);
 	assign tempsum = a + b;
 	always@(*)
+	begin
 		case(tempsum[BITWIDTH:BITWIDTH-1])
 			2'b01 : out = {1'b0, {smallBW{1'b1}}};
 			2'b10 : out = {1'b1, {smallBW{1'b0}}};

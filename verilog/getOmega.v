@@ -29,13 +29,13 @@ module getOmega(
    output wire [63:0] omega
 );
     //reg [39:0] omega; // Angle for frequency
-    wire [63:0] dataOut;
+    wire [39:0] dataOut;
     //wire omegaOut;
     wire misoOut;
     SPI_slave SPI(clk, sck, mosi, ssel, dataOut);
    
     //assign LED[15:0]=dataOut[31:16];
-    assign omega[63:0]=dataOut[63:0];
+    assign omega[39:0]=dataOut[39:0];
     //assign miso = misoOut;
 
       
